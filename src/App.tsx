@@ -2312,6 +2312,9 @@ Ich spezialisiere mich auf das Design **autonomer Multi-Agenten-Architekturen**,
                 <a href="https://elgasmiweb.vercel.app" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-amber-600 transition-colors">
                   elgasmiweb.vercel.app
                 </a>
+                <a href="https://www.linkedin.com/in/asmae-warter-08208b3a1" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-blue-600 transition-colors">
+                  LinkedIn
+                </a>
                 <p className="text-amber-600 font-semibold">{t.footer.tagline}</p>
               </div>
             </div>
