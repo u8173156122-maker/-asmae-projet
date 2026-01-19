@@ -51,6 +51,6 @@
     "express-rate-limit": "^7.4.0",
     "helmet": "^7.1.0",
     "jsonwebtoken": "^9.0.2",
-    "stripe": "^16.0.0"
+    "stripe": "^16.12.0"
   }
 }
