@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: asmae-api
+    runtime: node
+    region: frankfurt
+    plan: free
+    buildCommand: npm install && npm run build:server
+    startCommand: npm run start:server
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: ALLOWED_ORIGINS
+        value: https://elgasmiweb.vercel.app,https://asmae-projet.netlify.app
+    healthCheckPath: /health
