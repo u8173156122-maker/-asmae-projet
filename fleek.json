@@ -1,0 +1,15 @@
+{
+  "site": {
+    "id": "",
+    "team": "",
+    "platform": "ipfs",
+    "source": "ipfs",
+    "name": "asmae-elgasmi"
+  },
+  "build": {
+    "baseDir": "",
+    "publicDir": "dist",
+    "command": "npm run build",
+    "rootDir": ""
+  }
+}
