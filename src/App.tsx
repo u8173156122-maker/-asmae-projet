@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Mail, FileText, Users, Calendar, ShoppingCart, CreditCard, BarChart3, Phone, MessageSquare, Database, Cloud, Lock, Settings, Zap, Target, TrendingUp, DollarSign, Briefcase, Building, Truck, Package, ClipboardList, Clock, Bell, Search, Globe, Brain, Shield, Code, GitBranch, Rocket, HeartPulse, Wallet, Check, Play, ChevronLeft, RotateCcw } from 'lucide-react';
+import { sendChatMessage } from './lib/api';
 
 // ============================================================
 // COMPANY INFO
@@ -32,7 +33,7 @@ const SOLUTIONS = [
     price: '€10,000',
     stats: ['99.9%', '70%', '24/7', 'AES-256'],
     statsLabels: { en: ['Uptime SLA', 'Admin Time Saved', 'Autonomous Operation', 'Encryption Standard'], fr: ['SLA Disponibilité', 'Temps Admin Économisé', 'Opération Autonome', 'Standard Chiffrement'], ar: ['اتفاقية مستوى الخدمة', 'وقت الإدارة الموفر', 'تشغيل ذاتي', 'معيار التشفير'], de: ['Verfügbarkeits-SLA', 'Admin-Zeit gespart', 'Autonomer Betrieb', 'Verschlüsselungsstandard'] },
-    benefits: { en: ['Read & analyze: Emails, PDFs, images', 'Team & operations: Planning, meetings', 'Omnichannel: WhatsApp, Slack, Gmail', 'Claude AI + Pinecone intelligence', 'Full source code ownership', 'Unlimited users forever'], fr: ['Lecture & analyse: Emails, PDFs, images', 'Équipe & opérations: Planning, réunions', 'Omnicanal: WhatsApp, Slack, Gmail', 'Intelligence Claude AI + Pinecone', 'Propriété totale du code source', 'Utilisateurs illimités à vie'], ar: ['قراءة وتحليل: البريد، PDF، الصور', 'الفريق والعمليات: التخطيط، الاجتماعات', 'متعدد القنوات: واتساب، سلاك، جيميل', 'ذكاء Claude AI + Pinecone', 'ملكية كاملة للكود المصدري', 'مستخدمين غير محدودين للأبد'], de: ['Lesen & analysieren: E-Mails, PDFs, Bilder', 'Team & Betrieb: Planung, Meetings', 'Omnichannel: WhatsApp, Slack, Gmail', 'Claude AI + Pinecone Intelligenz', 'Vollständiges Quellcode-Eigentum', 'Unbegrenzte Benutzer für immer'] }
+    benefits: { en: ['Read & analyze: Emails, PDFs, images', 'Team & operations: Planning, meetings', 'Omnichannel: WhatsApp, Slack, Gmail', 'Advanced AI + Pinecone intelligence', 'Full source code ownership', 'Unlimited users forever'], fr: ['Lecture & analyse: Emails, PDFs, images', 'Équipe & opérations: Planning, réunions', 'Omnicanal: WhatsApp, Slack, Gmail', 'Intelligence Advanced AI + Pinecone', 'Propriété totale du code source', 'Utilisateurs illimités à vie'], ar: ['قراءة وتحليل: البريد، PDF، الصور', 'الفريق والعمليات: التخطيط، الاجتماعات', 'متعدد القنوات: واتساب، سلاك، جيميل', 'ذكاء Advanced AI + Pinecone', 'ملكية كاملة للكود المصدري', 'مستخدمين غير محدودين للأبد'], de: ['Lesen & analysieren: E-Mails, PDFs, Bilder', 'Team & Betrieb: Planung, Meetings', 'Omnichannel: WhatsApp, Slack, Gmail', 'Advanced AI + Pinecone Intelligenz', 'Vollständiges Quellcode-Eigentum', 'Unbegrenzte Benutzer für immer'] }
   },
   {
     id: 'codegen',
@@ -719,7 +720,7 @@ ${t.askSector}`;
 • Read & analyze: Emails, PDFs, images, documents
 • Team coordination: Planning, meetings, tasks
 • Omnichannel: WhatsApp, Slack, Gmail integration
-• Claude AI + Pinecone knowledge base
+• Advanced AI + Pinecone knowledge base
 
 **Performance Metrics:**
 ┌────────────────────────────────────┐
@@ -735,7 +736,7 @@ ${t.askSector}`;
 • Lecture & analyse: Emails, PDFs, images, documents
 • Coordination équipe: Planning, réunions, tâches
 • Omnicanal: Intégration WhatsApp, Slack, Gmail
-• Base de connaissances Claude AI + Pinecone
+• Base de connaissances Advanced AI + Pinecone
 
 **Métriques de Performance:**
 ┌────────────────────────────────────┐
@@ -1355,7 +1356,7 @@ Kann ich Ihnen noch bei etwas anderem helfen?`
       reasoning.push(`║  🎯 MATCH: RAG EL GASMI              ║`);
       reasoning.push(`╚══════════════════════════════════════╝`);
       reasoning.push(`→ ${lang === 'fr' ? 'Correspondance' : lang === 'ar' ? 'التطابق' : lang === 'de' ? 'Übereinstimmung' : 'Match'}: ${matchScore}%`);
-      reasoning.push(`→ ${lang === 'fr' ? 'Centre de commande IA unifié (Claude AI + Pinecone)' : lang === 'ar' ? 'مركز قيادة الذكاء الاصطناعي الموحد' : lang === 'de' ? 'Vereinigtes KI-Kommandozentrum' : 'Unified AI Command Center (Claude AI + Pinecone)'}`);
+      reasoning.push(`→ ${lang === 'fr' ? 'Centre de commande IA unifié (Advanced AI + Pinecone)' : lang === 'ar' ? 'مركز قيادة الذكاء الاصطناعي الموحد' : lang === 'de' ? 'Vereinigtes KI-Kommandozentrum' : 'Unified AI Command Center (Advanced AI + Pinecone)'}`);
     } else if (devChallenges.some(c => challengeLower.includes(c.toLowerCase()))) {
       matchedSolution = SOLUTIONS[2]; // CodeGen Enterprise
       matchScore = 90;
@@ -1728,14 +1729,6 @@ Bereit, Ihre ${sector}-Operationen zu transformieren?`
       matchedSolutionName = 'CodeGen Enterprise';
     }
 
-    let internalMinCost = 120000, internalMaxCost = 180000;
-    if (/1000|201/.test(answers.size || '')) { internalMinCost = 500000; internalMaxCost = 750000; }
-    else if (/51|200/.test(answers.size || '')) { internalMinCost = 280000; internalMaxCost = 400000; }
-    else if (/11|50/.test(answers.size || '')) { internalMinCost = 180000; internalMaxCost = 280000; }
-
-    const roiMin = Math.round((internalMinCost / 10000) * 100);
-    const roiMax = Math.round((internalMaxCost / 10000) * 100);
-
     const analysisTexts = {
       en: `═══════════════════════════════════════════════════════
   🎯 STRATEGIC ANALYSIS COMPLETE
@@ -1748,20 +1741,13 @@ Bereit, Ihre ${sector}-Operationen zu transformieren?`
 • Tools: ${answers.tools}
 
 ═══════════════════════════════════════════════════════
-  💰 COST ANALYSIS: INTERNAL TEAM vs. EL GASMI
+  ✨ RECOMMENDED SOLUTION
 ═══════════════════════════════════════════════════════
 
-**Option A: Internal AI Team**
-• Annual Cost: €${internalMinCost.toLocaleString()} - €${internalMaxCost.toLocaleString()}
-• Time to Production: 12-18 months
-• Risk: HIGH
-
-**Option B: ASMAE EL GASMI.e.U** ✨ RECOMMENDED
-• Solution: ${matchedSolutionName}
-• Investment: €10,000 (ONE-TIME)
-• Time to Production: 4-8 weeks
-• YOUR SAVINGS: €${(internalMinCost - 10000).toLocaleString()} - €${(internalMaxCost - 10000).toLocaleString()} (Year 1)
-• ROI: ${roiMin}% - ${roiMax}%
+**${matchedSolutionName}**
+• Delivery: 4-8 weeks
+• Lifetime License
+• 100% In-house Development
 
 **Ready to proceed?**`,
       fr: `═══════════════════════════════════════════════════════
@@ -1775,20 +1761,13 @@ Bereit, Ihre ${sector}-Operationen zu transformieren?`
 • Outils: ${answers.tools}
 
 ═══════════════════════════════════════════════════════
-  💰 ANALYSE COÛTS: ÉQUIPE INTERNE vs. EL GASMI
+  ✨ SOLUTION RECOMMANDÉE
 ═══════════════════════════════════════════════════════
 
-**Option A: Équipe IA Interne**
-• Coût Annuel: ${internalMinCost.toLocaleString()}€ - ${internalMaxCost.toLocaleString()}€
-• Délai: 12-18 mois
-• Risque: ÉLEVÉ
-
-**Option B: ASMAE EL GASMI.e.U** ✨ RECOMMANDÉ
-• Solution: ${matchedSolutionName}
-• Investissement: 10 000€ (UNIQUE)
+**${matchedSolutionName}**
 • Délai: 4-8 semaines
-• VOS ÉCONOMIES: ${(internalMinCost - 10000).toLocaleString()}€ - ${(internalMaxCost - 10000).toLocaleString()}€ (Année 1)
-• ROI: ${roiMin}% - ${roiMax}%
+• Licence à vie
+• Développement 100% interne
 
 **Prêt à procéder ?**`,
       ar: `═══════════════════════════════════════════════════════
@@ -1802,20 +1781,13 @@ Bereit, Ihre ${sector}-Operationen zu transformieren?`
 • الأدوات: ${answers.tools}
 
 ═══════════════════════════════════════════════════════
-  💰 تحليل التكلفة: الفريق الداخلي vs. EL GASMI
+  ✨ الحل الموصى به
 ═══════════════════════════════════════════════════════
 
-**الخيار أ: فريق ذكاء اصطناعي داخلي**
-• التكلفة السنوية: €${internalMinCost.toLocaleString()} - €${internalMaxCost.toLocaleString()}
-• الوقت: 12-18 شهراً
-• المخاطر: عالية
-
-**الخيار ب: ASMAE EL GASMI.e.U** ✨ موصى به
-• الحل: ${matchedSolutionName}
-• الاستثمار: €10,000 (مرة واحدة)
+**${matchedSolutionName}**
 • الوقت: 4-8 أسابيع
-• توفيرك: €${(internalMinCost - 10000).toLocaleString()} - €${(internalMaxCost - 10000).toLocaleString()} (السنة 1)
-• العائد: ${roiMin}% - ${roiMax}%
+• ترخيص مدى الحياة
+• تطوير داخلي 100%
 
 **هل أنت مستعد؟**`,
       de: `═══════════════════════════════════════════════════════
@@ -1829,20 +1801,13 @@ Bereit, Ihre ${sector}-Operationen zu transformieren?`
 • Tools: ${answers.tools}
 
 ═══════════════════════════════════════════════════════
-  💰 KOSTENANALYSE: INTERNES TEAM vs. EL GASMI
+  ✨ EMPFOHLENE LÖSUNG
 ═══════════════════════════════════════════════════════
 
-**Option A: Internes KI-Team**
-• Jahreskosten: €${internalMinCost.toLocaleString()} - €${internalMaxCost.toLocaleString()}
-• Zeit: 12-18 Monate
-• Risiko: HOCH
-
-**Option B: ASMAE EL GASMI.e.U** ✨ EMPFOHLEN
-• Lösung: ${matchedSolutionName}
-• Investition: €10.000 (EINMALIG)
+**${matchedSolutionName}**
 • Zeit: 4-8 Wochen
-• EINSPARUNG: €${(internalMinCost - 10000).toLocaleString()} - €${(internalMaxCost - 10000).toLocaleString()} (Jahr 1)
-• ROI: ${roiMin}% - ${roiMax}%
+• Lebenslange Lizenz
+• 100% Interne Entwicklung
 
 **Bereit fortzufahren?**`
     };
@@ -2431,30 +2396,56 @@ Ich spezialisiere mich auf das Design **autonomer Multi-Agenten-Architekturen**,
               )}
             </div>
             <div className="flex gap-3">
-              <input type="text" value={input} onChange={(e) => setInput(e.target.value)} onKeyDown={(e) => {
+              <input type="text" value={input} onChange={(e) => setInput(e.target.value)} onKeyDown={async (e) => {
                 if (e.key === 'Enter' && input.trim()) {
                   const userText = input;
                   setMessages(prev => [...prev, { role: 'user', content: userText }]);
                   setIsThinking(true);
                   setInput('');
-                  setTimeout(() => {
-                    setIsThinking(false);
+
+                  // Try OpenAI API first
+                  const chatHistory = messages.filter(m => m.role === 'user' || m.role === 'agent').map(m => ({
+                    role: m.role === 'user' ? 'user' as const : 'assistant' as const,
+                    content: m.content
+                  }));
+                  chatHistory.push({ role: 'user' as const, content: userText });
+
+                  const apiResponse = await sendChatMessage(chatHistory, lang);
+                  setIsThinking(false);
+
+                  if (apiResponse.response && !apiResponse.error) {
+                    setMessages(prev => [...prev, { role: 'agent', content: apiResponse.response, phase: 'AI ADVISOR' }]);
+                  } else {
+                    // Fallback to local response
                     const response = handleIntelligentResponse(userText);
                     setMessages(prev => [...prev, { role: 'agent', ...response }]);
-                  }, 1500);
+                  }
                 }
               }} placeholder={t.consultant.placeholder} className="flex-1 px-6 py-4 bg-white border border-slate-300 rounded-xl focus:border-amber-500 focus:outline-none"/>
-              <button onClick={() => {
+              <button onClick={async () => {
                 if (input.trim()) {
                   const userText = input;
                   setMessages(prev => [...prev, { role: 'user', content: userText }]);
                   setIsThinking(true);
                   setInput('');
-                  setTimeout(() => {
-                    setIsThinking(false);
+
+                  // Try OpenAI API first
+                  const chatHistory = messages.filter(m => m.role === 'user' || m.role === 'agent').map(m => ({
+                    role: m.role === 'user' ? 'user' as const : 'assistant' as const,
+                    content: m.content
+                  }));
+                  chatHistory.push({ role: 'user' as const, content: userText });
+
+                  const apiResponse = await sendChatMessage(chatHistory, lang);
+                  setIsThinking(false);
+
+                  if (apiResponse.response && !apiResponse.error) {
+                    setMessages(prev => [...prev, { role: 'agent', content: apiResponse.response, phase: 'AI ADVISOR' }]);
+                  } else {
+                    // Fallback to local response
                     const response = handleIntelligentResponse(userText);
                     setMessages(prev => [...prev, { role: 'agent', ...response }]);
-                  }, 1500);
+                  }
                 }
               }} className="px-6 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold rounded-xl hover:from-amber-600 hover:to-amber-700 transition-all">
                 {t.consultant.send}

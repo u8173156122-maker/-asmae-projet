@@ -1,0 +1,30 @@
+{
+  "name": "asmae-api",
+  "description": "ASMAE EL GASMI Backend API",
+  "repository": "https://github.com/u8173156122/-asmae-projet",
+  "logo": "https://elgasmiweb.vercel.app/logo.png",
+  "keywords": ["node", "express", "openai", "api"],
+  "stack": "heroku-22",
+  "env": {
+    "NODE_ENV": {
+      "description": "Environment",
+      "value": "production"
+    },
+    "OPENAI_API_KEY": {
+      "description": "OpenAI API Key for AI chat",
+      "required": true
+    },
+    "ALLOWED_ORIGINS": {
+      "description": "Comma-separated list of allowed origins",
+      "value": "https://elgasmiweb.vercel.app,https://asmae-projet.netlify.app"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "scripts": {
+    "postdeploy": "npm run build:server"
+  }
+}

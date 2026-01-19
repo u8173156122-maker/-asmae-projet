@@ -1,0 +1,31 @@
+# DigitalOcean App Platform Configuration
+name: asmae-api
+region: fra
+
+services:
+  - name: api
+    github:
+      repo: u8173156122/-asmae-projet
+      branch: main
+      deploy_on_push: true
+    build_command: npm install && npm run build:server
+    run_command: npm run start:server
+    http_port: 3001
+    instance_size_slug: basic-xxs
+    instance_count: 1
+    routes:
+      - path: /
+    envs:
+      - key: NODE_ENV
+        value: production
+      - key: OPENAI_API_KEY
+        type: SECRET
+      - key: ALLOWED_ORIGINS
+        value: https://elgasmiweb.vercel.app,https://asmae-projet.netlify.app
+    health_check:
+      http_path: /health
+      initial_delay_seconds: 10
+      period_seconds: 30
+      timeout_seconds: 5
+      success_threshold: 1
+      failure_threshold: 3
