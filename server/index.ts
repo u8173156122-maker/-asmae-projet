@@ -432,9 +432,10 @@ app.get('/health', (_req: Request, res: Response) => {
 // ----------------------
 // START SERVER
 // ----------------------
-const PORT = process.env.PORT || 3001;
+const PORT = parseInt(process.env.PORT || '3001', 10);
+const HOST = '0.0.0.0';
 
-app.listen(PORT, () => {
+app.listen(PORT, HOST, () => {
   console.log(`Server running on port ${PORT}`);
   console.log(`OpenAI configured: ${!!(process.env.OPENAI_API_KEY || process.env.BUILT_IN_FORGE_API_KEY)}`);
   console.log(`Stripe configured: ${!!process.env.STRIPE_SECRET_KEY}`);
