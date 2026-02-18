@@ -409,8 +409,12 @@ app.post('/api/contact', async (req: Request, res: Response) => {
 });
 
 // ----------------------
-// HEALTH CHECK
+// ROOT & HEALTH CHECK
 // ----------------------
+app.get('/', (_req: Request, res: Response) => {
+  res.json({ name: 'ASMAE EL GASMI API', status: 'online', health: '/health' });
+});
+
 app.get('/health', (_req: Request, res: Response) => {
   res.json({
     status: 'healthy',

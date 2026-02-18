@@ -10,7 +10,7 @@ services:
       - key: NODE_ENV
         value: production
       - key: PORT
-        value: 10000
+        value: 3001
       - key: APP_URL
         value: https://elgasmi-eu.com
       - key: ALLOWED_ORIGINS
