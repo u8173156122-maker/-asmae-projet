@@ -12,7 +12,7 @@ services:
       - NODE_ENV=production
       - PORT=3001
       - OPENAI_API_KEY=${OPENAI_API_KEY}
-      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS:-http://localhost:5173,https://elgasmiweb.vercel.app}
+      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS:-http://localhost:5173,https://elgasmi-eu.com}
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3001/health"]

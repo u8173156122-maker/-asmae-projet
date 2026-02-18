@@ -65,8 +65,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             }
           ],
           application_context: {
-            return_url: `${process.env.APP_URL || 'https://asmae-projet.vercel.app'}/success`,
-            cancel_url: `${process.env.APP_URL || 'https://asmae-projet.vercel.app'}/cancel`
+            return_url: `${process.env.APP_URL || 'https://elgasmi-eu.com'}/success`,
+            cancel_url: `${process.env.APP_URL || 'https://elgasmi-eu.com'}/cancel`
           }
         })
       });

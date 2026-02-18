@@ -3,8 +3,8 @@
 // Security: Sanitization, Validation, Rate Limiting
 // ============================================================
 
-// Use VITE_API_URL if set, otherwise use relative /api path (for Vercel serverless)
-const API_URL = import.meta.env.VITE_API_URL || '';
+// Use VITE_API_URL or VITE_API_BASE_URL if set, otherwise use relative /api path (for Vercel serverless)
+const API_URL = import.meta.env.VITE_API_URL || import.meta.env.VITE_API_BASE_URL || '';
 
 interface ChatMessage {
   role: 'user' | 'assistant';

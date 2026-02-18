@@ -47,8 +47,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       ],
       mode: 'payment',
       customer_email: customerEmail,
-      success_url: `${process.env.APP_URL || 'https://asmae-projet.vercel.app'}/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${process.env.APP_URL || 'https://asmae-projet.vercel.app'}/cancel`,
+      success_url: `${process.env.APP_URL || 'https://elgasmi-eu.com'}/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${process.env.APP_URL || 'https://elgasmi-eu.com'}/cancel`,
       metadata: {
         productName,
         customerEmail

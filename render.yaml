@@ -9,8 +9,36 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
+      - key: PORT
+        value: 3001
+      - key: APP_URL
+        value: https://elgasmi-eu.com
+      - key: ALLOWED_ORIGINS
+        value: https://elgasmi-eu.com,https://www.elgasmi-eu.com,https://elgasmi-eu-agent2.onrender.com
       - key: OPENAI_API_KEY
         sync: false
-      - key: ALLOWED_ORIGINS
-        value: https://elgasmi-eu.surge.sh,https://asmae-projet.vercel.app,https://elgasmiweb.vercel.app
+      - key: BUILT_IN_FORGE_API_KEY
+        sync: false
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false
+      - key: VITE_STRIPE_PUBLIC_KEY
+        sync: false
+      - key: PAYPAL_CLIENT_ID
+        sync: false
+      - key: PAYPAL_CLIENT_SECRET
+        sync: false
+      - key: PAYPAL_MODE
+        value: live
+      - key: BREVO_API_KEY
+        sync: false
+      - key: BREVO_SENDER_EMAIL
+        value: contact@elgasmi-eu.com
+      - key: NOTIFICATION_EMAIL
+        value: contact@elgasmi-eu.com
+      - key: JWT_SECRET
+        sync: false
     healthCheckPath: /health
+    customDomains:
+      - domain: app.elgasmi-eu.com

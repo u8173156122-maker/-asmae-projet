@@ -213,4 +213,4 @@ docker-compose up -d # Tout lancer
 
 ## Support
 
-**Contact:** asmaewarter5@gmail.com | WhatsApp: +4368120460618
+**Contact:** contact@elgasmi-eu.com | WhatsApp: +4368120460618

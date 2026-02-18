@@ -2,7 +2,7 @@
   "name": "asmae-api",
   "description": "ASMAE EL GASMI Backend API",
   "repository": "https://github.com/u8173156122/-asmae-projet",
-  "logo": "https://elgasmiweb.vercel.app/logo.png",
+  "logo": "https://elgasmi-eu.com/logo.png",
   "keywords": ["node", "express", "openai", "api"],
   "stack": "heroku-22",
   "env": {
@@ -16,7 +16,7 @@
     },
     "ALLOWED_ORIGINS": {
       "description": "Comma-separated list of allowed origins",
-      "value": "https://elgasmiweb.vercel.app,https://asmae-projet.netlify.app"
+      "value": "https://elgasmi-eu.com"
     }
   },
   "buildpacks": [

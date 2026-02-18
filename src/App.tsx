@@ -8,9 +8,9 @@ import { sendChatMessage } from './lib/api';
 const COMPANY = {
   name: 'ASMAE EL GASMI.e.U',
   address: 'Hilschergasse 10/23, 1120 Vienna, Austria',
-  email: 'asmaewarter5@gmail.com',
+  email: 'contact@elgasmi-eu.com',
   whatsapp: '+4368120460618',
-  website: 'https://elgasmiweb.vercel.app'
+  website: 'https://elgasmi-eu.com'
 };
 
 // ============================================================
@@ -123,10 +123,18 @@ const translations = {
     expertise: { title: 'Universal Sector Expertise', subtitle: 'Our agentic systems architecture adapts to any industry', sectors: 'Technology • Finance • Healthcare • Manufacturing • Agriculture • Retail • Legal • Logistics • Construction • Artisanat • Education • Energy' },
     automations: { title: 'Automation Capabilities', subtitle: '500+ tasks we can automate for your business' },
     consultant: { title: 'Senior Strategic AI Advisor', subtitle: 'Doctoral-level expertise in agentic systems', placeholder: 'Describe your business challenge...', send: 'Send', thinking: 'Strategic Analysis...', restart: 'New Consultation', back: '← Back to Home' },
-    contact: { title: 'Begin Your Transformation', address: 'Headquarters', email: 'Strategic Inquiries', whatsapp: 'WhatsApp Business', cta: 'Schedule Discovery Call' },
+    contact: { title: 'Begin Your Transformation', address: 'Headquarters', email: 'Strategic Inquiries', whatsapp: 'WhatsApp Business', cta: 'Schedule Discovery Call', formName: 'Full Name', formEmail: 'Email Address', formMessage: 'Your Message', formSend: 'Send Message', formSuccess: 'Message sent successfully! We will reply within 24 hours.', formNamePh: 'Your name', formEmailPh: 'your@email.com', formMsgPh: 'Describe your project or question...' },
+    projects: { title: 'Our Projects', subtitle: 'Enterprise solutions delivered to our clients', items: [
+      { name: 'Multi-Agent Sales Platform', desc: 'Autonomous lead qualification and multichannel conversion system for a European e-commerce company.', tag: 'Multi-Agent' },
+      { name: 'RAG Document Intelligence', desc: 'AI-powered document analysis and knowledge extraction system for a legal firm in Vienna.', tag: 'RAG System' },
+      { name: 'CodeGen Automation Suite', desc: 'Automated code generation and deployment pipeline for a fintech startup.', tag: 'CodeGen' },
+      { name: 'Healthcare Workflow Automation', desc: 'Patient scheduling, records management and AI-assisted diagnostics for a medical center.', tag: 'Custom' },
+      { name: 'Supply Chain Intelligence', desc: 'Predictive demand forecasting and inventory optimization for a manufacturing company.', tag: 'Multi-Agent' },
+      { name: 'Real Estate AI Assistant', desc: 'Virtual property tours, lead nurturing and transaction automation for a real estate agency.', tag: 'RAG System' }
+    ]},
     footer: { rights: 'All rights reserved', tagline: 'Automate. Accelerate. Dominate.' },
     tests: { run: 'Run Tests', title: 'Test Suite Results', completed: 'tests completed' },
-    payment: { title: 'Secure Payment', processing: 'Processing...', success: 'Payment Successful!', confirmed: 'Your order has been confirmed.' }
+    payment: { title: 'Secure Payment', processing: 'Processing...', success: 'Payment Successful!', confirmed: 'Your order has been confirmed. You will receive a confirmation email shortly.', emailLabel: 'Your email address', emailPlaceholder: 'email@example.com', errorPayment: 'Payment failed. Please try again.', redirecting: 'Redirecting to secure payment...', successReturn: 'Thank you for your purchase!', successMsg: 'Your payment has been confirmed successfully. Our team will contact you within 24 hours to begin implementation.', cancelReturn: 'Payment Cancelled', cancelMsg: 'Your payment was cancelled. You can try again at any time.', backHome: 'Back to Home', retryPayment: 'Try Again' }
   },
   fr: {
     nav: { home: 'Accueil', solutions: 'Solutions', expertise: 'Expertise', consultant: 'Conseiller IA', contact: 'Contact' },
@@ -161,10 +169,18 @@ const translations = {
     expertise: { title: 'Expertise Sectorielle Universelle', subtitle: 'Notre architecture s\'adapte à toute industrie', sectors: 'Technologie • Finance • Santé • Industrie • Agriculture • Retail • Juridique • Logistique • Construction • Artisanat • Éducation • Énergie' },
     automations: { title: 'Capacités d\'Automatisation', subtitle: '500+ tâches que nous pouvons automatiser' },
     consultant: { title: 'Conseiller Stratégique IA Senior', subtitle: 'Expertise doctorale en systèmes agentiques', placeholder: 'Décrivez votre défi business...', send: 'Envoyer', thinking: 'Analyse Stratégique...', restart: 'Nouvelle Consultation', back: '← Retour à l\'Accueil' },
-    contact: { title: 'Commencez Votre Transformation', address: 'Siège Social', email: 'Demandes Stratégiques', whatsapp: 'WhatsApp Business', cta: 'Planifier Appel Découverte' },
+    contact: { title: 'Commencez Votre Transformation', address: 'Siège Social', email: 'Demandes Stratégiques', whatsapp: 'WhatsApp Business', cta: 'Planifier Appel Découverte', formName: 'Nom Complet', formEmail: 'Adresse Email', formMessage: 'Votre Message', formSend: 'Envoyer le Message', formSuccess: 'Message envoyé avec succès ! Nous répondrons sous 24h.', formNamePh: 'Votre nom', formEmailPh: 'votre@email.com', formMsgPh: 'Décrivez votre projet ou question...' },
+    projects: { title: 'Nos Projets', subtitle: 'Solutions entreprise livrées à nos clients', items: [
+      { name: 'Plateforme Vente Multi-Agent', desc: 'Système autonome de qualification de leads et conversion multicanal pour un e-commerce européen.', tag: 'Multi-Agent' },
+      { name: 'RAG Intelligence Documentaire', desc: 'Système d\'analyse de documents et extraction de connaissances par IA pour un cabinet juridique à Vienne.', tag: 'Système RAG' },
+      { name: 'Suite Automatisation CodeGen', desc: 'Génération automatique de code et pipeline de déploiement pour une startup fintech.', tag: 'CodeGen' },
+      { name: 'Automatisation Workflow Santé', desc: 'Planification patients, gestion des dossiers et diagnostics assistés par IA pour un centre médical.', tag: 'Custom' },
+      { name: 'Intelligence Supply Chain', desc: 'Prévision prédictive de la demande et optimisation des stocks pour une entreprise manufacturière.', tag: 'Multi-Agent' },
+      { name: 'Assistant IA Immobilier', desc: 'Visites virtuelles, nurturing de leads et automatisation des transactions pour une agence immobilière.', tag: 'Système RAG' }
+    ]},
     footer: { rights: 'Tous droits réservés', tagline: 'Automatisez. Accélérez. Dominez.' },
     tests: { run: 'Lancer Tests', title: 'Résultats Suite de Tests', completed: 'tests complétés' },
-    payment: { title: 'Paiement Sécurisé', processing: 'Traitement en cours...', success: 'Paiement Réussi!', confirmed: 'Votre commande a été confirmée.' }
+    payment: { title: 'Paiement Sécurisé', processing: 'Traitement en cours...', success: 'Paiement Réussi!', confirmed: 'Votre commande a été confirmée. Vous recevrez un email de confirmation sous peu.', emailLabel: 'Votre adresse email', emailPlaceholder: 'email@exemple.com', errorPayment: 'Échec du paiement. Veuillez réessayer.', redirecting: 'Redirection vers le paiement sécurisé...', successReturn: 'Merci pour votre achat !', successMsg: 'Votre paiement a été confirmé avec succès. Notre équipe vous contactera sous 24h pour démarrer l\'implémentation.', cancelReturn: 'Paiement Annulé', cancelMsg: 'Votre paiement a été annulé. Vous pouvez réessayer à tout moment.', backHome: 'Retour à l\'Accueil', retryPayment: 'Réessayer' }
   },
   ar: {
     nav: { home: 'الرئيسية', solutions: 'الحلول', expertise: 'الخبرة', consultant: 'مستشار الذكاء', contact: 'اتصل' },
@@ -199,10 +215,18 @@ const translations = {
     expertise: { title: 'خبرة قطاعية عالمية', subtitle: 'هندسة أنظمتنا تتكيف مع أي صناعة', sectors: 'التكنولوجيا • المالية • الرعاية الصحية • التصنيع • الزراعة • التجزئة • القانوني • اللوجستيات • البناء • الحرف • التعليم • الطاقة' },
     automations: { title: 'قدرات الأتمتة', subtitle: '500+ مهمة يمكننا أتمتتها لعملك' },
     consultant: { title: 'مستشار استراتيجي أول للذكاء الاصطناعي', subtitle: 'خبرة على مستوى الدكتوراه في الأنظمة الوكيلة', placeholder: 'صف تحدي عملك...', send: 'إرسال', thinking: 'التحليل الاستراتيجي...', restart: 'استشارة جديدة', back: '→ العودة للرئيسية' },
-    contact: { title: 'ابدأ تحولك', address: 'المقر الرئيسي', email: 'الاستفسارات الاستراتيجية', whatsapp: 'واتساب للأعمال', cta: 'جدولة مكالمة اكتشاف' },
+    contact: { title: 'ابدأ تحولك', address: 'المقر الرئيسي', email: 'الاستفسارات الاستراتيجية', whatsapp: 'واتساب للأعمال', cta: 'جدولة مكالمة اكتشاف', formName: 'الاسم الكامل', formEmail: 'البريد الإلكتروني', formMessage: 'رسالتك', formSend: 'إرسال الرسالة', formSuccess: 'تم إرسال الرسالة بنجاح! سنرد خلال 24 ساعة.', formNamePh: 'اسمك', formEmailPh: 'بريدك@email.com', formMsgPh: 'صف مشروعك أو سؤالك...' },
+    projects: { title: 'مشاريعنا', subtitle: 'حلول مؤسسية تم تسليمها لعملائنا', items: [
+      { name: 'منصة مبيعات متعددة الوكلاء', desc: 'نظام تأهيل عملاء مستقل وتحويل متعدد القنوات لشركة تجارة إلكترونية أوروبية.', tag: 'Multi-Agent' },
+      { name: 'ذكاء المستندات RAG', desc: 'نظام تحليل المستندات واستخراج المعرفة بالذكاء الاصطناعي لمكتب محاماة في فيينا.', tag: 'نظام RAG' },
+      { name: 'مجموعة أتمتة CodeGen', desc: 'إنشاء كود تلقائي وخط أنابيب نشر لشركة تقنية مالية ناشئة.', tag: 'CodeGen' },
+      { name: 'أتمتة سير عمل الرعاية الصحية', desc: 'جدولة المرضى وإدارة السجلات والتشخيص بمساعدة الذكاء الاصطناعي لمركز طبي.', tag: 'مخصص' },
+      { name: 'ذكاء سلسلة التوريد', desc: 'التنبؤ بالطلب وتحسين المخزون لشركة تصنيع.', tag: 'Multi-Agent' },
+      { name: 'مساعد عقارات ذكي', desc: 'جولات افتراضية ورعاية العملاء وأتمتة المعاملات لوكالة عقارية.', tag: 'نظام RAG' }
+    ]},
     footer: { rights: 'جميع الحقوق محفوظة', tagline: 'أتمت. سرّع. هيمن.' },
     tests: { run: 'تشغيل الاختبارات', title: 'نتائج مجموعة الاختبارات', completed: 'اختبارات مكتملة' },
-    payment: { title: 'الدفع الآمن', processing: 'جاري المعالجة...', success: 'تم الدفع بنجاح!', confirmed: 'تم تأكيد طلبك.' }
+    payment: { title: 'الدفع الآمن', processing: 'جاري المعالجة...', success: 'تم الدفع بنجاح!', confirmed: 'تم تأكيد طلبك. ستتلقى بريد تأكيد قريباً.', emailLabel: 'عنوان بريدك الإلكتروني', emailPlaceholder: 'email@example.com', errorPayment: 'فشل الدفع. يرجى المحاولة مرة أخرى.', redirecting: 'جاري التوجيه للدفع الآمن...', successReturn: 'شكراً لشرائك!', successMsg: 'تم تأكيد الدفع بنجاح. سيتواصل معك فريقنا خلال 24 ساعة لبدء التنفيذ.', cancelReturn: 'تم إلغاء الدفع', cancelMsg: 'تم إلغاء الدفع. يمكنك المحاولة مرة أخرى في أي وقت.', backHome: 'العودة للرئيسية', retryPayment: 'حاول مرة أخرى' }
   },
   de: {
     nav: { home: 'Startseite', solutions: 'Lösungen', expertise: 'Expertise', consultant: 'KI-Berater', contact: 'Kontakt' },
@@ -237,10 +261,18 @@ const translations = {
     expertise: { title: 'Universelle Branchenexpertise', subtitle: 'Unsere Architektur passt sich jeder Branche an', sectors: 'Technologie • Finanzen • Gesundheit • Fertigung • Landwirtschaft • Einzelhandel • Recht • Logistik • Bau • Handwerk • Bildung • Energie' },
     automations: { title: 'Automatisierungsfähigkeiten', subtitle: '500+ Aufgaben, die wir automatisieren können' },
     consultant: { title: 'Senior Strategischer KI-Berater', subtitle: 'Doktoratsniveau-Expertise in agentischen Systemen', placeholder: 'Beschreiben Sie Ihre Herausforderung...', send: 'Senden', thinking: 'Strategische Analyse...', restart: 'Neue Beratung', back: '← Zurück zur Startseite' },
-    contact: { title: 'Starten Sie Ihre Transformation', address: 'Hauptsitz', email: 'Strategische Anfragen', whatsapp: 'WhatsApp Business', cta: 'Discovery-Call Planen' },
+    contact: { title: 'Starten Sie Ihre Transformation', address: 'Hauptsitz', email: 'Strategische Anfragen', whatsapp: 'WhatsApp Business', cta: 'Discovery-Call Planen', formName: 'Vollständiger Name', formEmail: 'E-Mail-Adresse', formMessage: 'Ihre Nachricht', formSend: 'Nachricht Senden', formSuccess: 'Nachricht erfolgreich gesendet! Wir antworten innerhalb von 24 Stunden.', formNamePh: 'Ihr Name', formEmailPh: 'ihre@email.com', formMsgPh: 'Beschreiben Sie Ihr Projekt oder Ihre Frage...' },
+    projects: { title: 'Unsere Projekte', subtitle: 'Enterprise-Lösungen für unsere Kunden', items: [
+      { name: 'Multi-Agent Verkaufsplattform', desc: 'Autonomes Lead-Qualifizierungs- und Multichannel-Konversionssystem für ein europäisches E-Commerce-Unternehmen.', tag: 'Multi-Agent' },
+      { name: 'RAG Dokumenten-Intelligenz', desc: 'KI-gestützte Dokumentenanalyse und Wissensextraktion für eine Anwaltskanzlei in Wien.', tag: 'RAG-System' },
+      { name: 'CodeGen Automatisierungs-Suite', desc: 'Automatische Codegenerierung und Deployment-Pipeline für ein Fintech-Startup.', tag: 'CodeGen' },
+      { name: 'Healthcare Workflow-Automatisierung', desc: 'Patientenplanung, Aktenverwaltung und KI-unterstützte Diagnostik für ein medizinisches Zentrum.', tag: 'Custom' },
+      { name: 'Supply Chain Intelligenz', desc: 'Prädiktive Bedarfsprognose und Bestandsoptimierung für ein Fertigungsunternehmen.', tag: 'Multi-Agent' },
+      { name: 'Immobilien KI-Assistent', desc: 'Virtuelle Besichtigungen, Lead-Nurturing und Transaktionsautomatisierung für eine Immobilienagentur.', tag: 'RAG-System' }
+    ]},
     footer: { rights: 'Alle Rechte vorbehalten', tagline: 'Automatisieren. Beschleunigen. Dominieren.' },
     tests: { run: 'Tests Ausführen', title: 'Testergebnisse', completed: 'Tests abgeschlossen' },
-    payment: { title: 'Sichere Zahlung', processing: 'Verarbeitung...', success: 'Zahlung Erfolgreich!', confirmed: 'Ihre Bestellung wurde bestätigt.' }
+    payment: { title: 'Sichere Zahlung', processing: 'Verarbeitung...', success: 'Zahlung Erfolgreich!', confirmed: 'Ihre Bestellung wurde bestätigt. Sie erhalten in Kürze eine Bestätigungs-E-Mail.', emailLabel: 'Ihre E-Mail-Adresse', emailPlaceholder: 'email@beispiel.com', errorPayment: 'Zahlung fehlgeschlagen. Bitte versuchen Sie es erneut.', redirecting: 'Weiterleitung zur sicheren Zahlung...', successReturn: 'Vielen Dank für Ihren Kauf!', successMsg: 'Ihre Zahlung wurde erfolgreich bestätigt. Unser Team wird Sie innerhalb von 24 Stunden kontaktieren, um mit der Implementierung zu beginnen.', cancelReturn: 'Zahlung Abgebrochen', cancelMsg: 'Ihre Zahlung wurde abgebrochen. Sie können es jederzeit erneut versuchen.', backHome: 'Zurück zur Startseite', retryPayment: 'Erneut Versuchen' }
   }
 };
 
@@ -260,13 +292,81 @@ export default function App() {
   const [showPayment, setShowPayment] = useState(false);
   const [selectedSolution, setSelectedSolution] = useState<any>(null);
   const [paymentStatus, setPaymentStatus] = useState<string | null>(null);
+  const [paymentError, setPaymentError] = useState<string | null>(null);
+  const [customerEmail, setCustomerEmail] = useState('');
+  const [pageView, setPageView] = useState<'home' | 'success' | 'cancel'>('home');
   const [showTests, setShowTests] = useState(false);
+  const [contactForm, setContactForm] = useState({ name: '', email: '', message: '' });
+  const [contactSent, setContactSent] = useState(false);
   const [testResults, setTestResults] = useState<any[]>([]);
   const [animatedStats, setAnimatedStats] = useState({ conv: 0, cost: 0, tasks: 0, uptime: 0 });
   const chatRef = useRef<HTMLDivElement>(null);
 
   const t = translations[lang as keyof typeof translations];
   const isRTL = lang === 'ar';
+
+  // Detect success/cancel page from URL
+  useEffect(() => {
+    const path = window.location.pathname;
+    if (path === '/success') setPageView('success');
+    else if (path === '/cancel') setPageView('cancel');
+  }, []);
+
+  // Stripe payment handler
+  const handleStripePayment = async () => {
+    if (!customerEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(customerEmail)) return;
+    setPaymentStatus('processing');
+    setPaymentError(null);
+    try {
+      const priceMap: Record<string, number> = { multiagent: 1000000, rag: 1000000, codegen: 1000000 };
+      const amount = priceMap[selectedSolution?.id] || 1000000;
+      const API_BASE = import.meta.env.VITE_API_URL || import.meta.env.VITE_API_BASE_URL || '';
+      const endpoint = API_BASE ? `${API_BASE}/api/stripe` : '/api/stripe';
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ amount, currency: 'eur', productName: selectedSolution?.name || 'AI Solution', customerEmail })
+      });
+      const data = await res.json();
+      if (data.url) {
+        setPaymentStatus('redirecting');
+        window.location.href = data.url;
+      } else {
+        throw new Error(data.error || 'Payment failed');
+      }
+    } catch {
+      setPaymentStatus(null);
+      setPaymentError(t.payment.errorPayment);
+    }
+  };
+
+  // PayPal payment handler
+  const handlePayPalPayment = async () => {
+    if (!customerEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(customerEmail)) return;
+    setPaymentStatus('processing');
+    setPaymentError(null);
+    try {
+      const priceMap: Record<string, number> = { multiagent: 1000000, rag: 1000000, codegen: 1000000 };
+      const amount = priceMap[selectedSolution?.id] || 1000000;
+      const API_BASE = import.meta.env.VITE_API_URL || import.meta.env.VITE_API_BASE_URL || '';
+      const endpoint = API_BASE ? `${API_BASE}/api/paypal` : '/api/paypal';
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'create', amount, currency: 'EUR', productName: selectedSolution?.name || 'AI Solution' })
+      });
+      const data = await res.json();
+      if (data.orderId) {
+        setPaymentStatus('redirecting');
+        window.location.href = `https://www.paypal.com/checkoutnow?token=${data.orderId}`;
+      } else {
+        throw new Error(data.error || 'PayPal failed');
+      }
+    } catch {
+      setPaymentStatus(null);
+      setPaymentError(t.payment.errorPayment);
+    }
+  };
 
   useEffect(() => {
     const targets = { conv: 340, cost: 70, tasks: 73, uptime: 99.9 };
@@ -310,12 +410,13 @@ export default function App() {
     }
   };
 
-  const PaymentModal = () => (
+  // PaymentModal rendered as inline JSX (not a component) to fix input re-mount bug
+  const paymentModalJSX = showPayment ? (
     <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
       <div className={`bg-white rounded-2xl max-w-lg w-full p-8 ${isRTL ? 'rtl' : 'ltr'}`}>
         <div className="flex items-center justify-between mb-6">
           <h3 className="text-2xl font-bold text-slate-900">{t.payment.title}</h3>
-          <button onClick={() => { setShowPayment(false); setPaymentStatus(null); }} className="p-2 hover:bg-slate-100 rounded-lg">
+          <button onClick={() => { setShowPayment(false); setPaymentStatus(null); setPaymentError(null); setCustomerEmail(''); }} className="p-2 hover:bg-slate-100 rounded-lg">
             <span className="text-2xl">×</span>
           </button>
         </div>
@@ -327,22 +428,29 @@ export default function App() {
             <h4 className="text-xl font-bold text-green-600 mb-2">{t.payment.success}</h4>
             <p className="text-slate-600">{t.payment.confirmed}</p>
           </div>
-        ) : paymentStatus === 'processing' ? (
+        ) : paymentStatus === 'processing' || paymentStatus === 'redirecting' ? (
           <div className="text-center py-8">
             <div className="w-16 h-16 border-4 border-amber-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-            <p className="text-slate-600">{t.payment.processing}</p>
+            <p className="text-slate-600">{paymentStatus === 'redirecting' ? t.payment.redirecting : t.payment.processing}</p>
           </div>
         ) : (
           <>
-            <div className="bg-slate-50 rounded-xl p-4 mb-6">
+            <div className="bg-slate-50 rounded-xl p-4 mb-4">
               <div className="flex justify-between items-center">
                 <span className="text-slate-600">{selectedSolution?.name}</span>
-                <span className="text-2xl font-bold text-amber-600">€10,000</span>
+                <span className="text-2xl font-bold text-amber-600">{selectedSolution?.price || '€10,000'}</span>
               </div>
               <div className="text-xs text-slate-500 mt-1">{t.solutions.priceNote}</div>
             </div>
+            {paymentError && (
+              <div className="bg-red-50 border border-red-200 text-red-700 rounded-xl p-3 mb-4 text-sm">{paymentError}</div>
+            )}
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-slate-700 mb-1">{t.payment.emailLabel}</label>
+              <input type="email" value={customerEmail} onChange={(e) => setCustomerEmail(e.target.value)} placeholder={t.payment.emailPlaceholder} className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:border-amber-500 focus:outline-none text-slate-900" />
+            </div>
             <div className="space-y-3 mb-6">
-              <button onClick={() => { setPaymentStatus('processing'); setTimeout(() => setPaymentStatus('success'), 2000); }} className="w-full flex items-center justify-between p-4 border-2 border-slate-200 rounded-xl hover:border-purple-500 hover:bg-purple-50 transition-all">
+              <button onClick={handleStripePayment} disabled={!customerEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(customerEmail)} className="w-full flex items-center justify-between p-4 border-2 border-slate-200 rounded-xl hover:border-purple-500 hover:bg-purple-50 transition-all disabled:opacity-50 disabled:cursor-not-allowed">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
                     <CreditCard className="w-6 h-6 text-purple-600" />
@@ -354,7 +462,7 @@ export default function App() {
                 </div>
                 <Shield className="w-5 h-5 text-green-500" />
               </button>
-              <button onClick={() => { setPaymentStatus('processing'); setTimeout(() => setPaymentStatus('success'), 2000); }} className="w-full flex items-center justify-between p-4 border-2 border-slate-200 rounded-xl hover:border-blue-500 hover:bg-blue-50 transition-all">
+              <button onClick={handlePayPalPayment} disabled={!customerEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(customerEmail)} className="w-full flex items-center justify-between p-4 border-2 border-slate-200 rounded-xl hover:border-blue-500 hover:bg-blue-50 transition-all disabled:opacity-50 disabled:cursor-not-allowed">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
                     <Wallet className="w-6 h-6 text-blue-600" />
@@ -376,7 +484,7 @@ export default function App() {
         )}
       </div>
     </div>
-  );
+  ) : null;
 
   const TestPanel = () => (
     <div className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4">
@@ -2065,10 +2173,58 @@ Ich spezialisiere mich auf das Design **autonomer Multi-Agenten-Architekturen**,
     setQuestionIndex(0);
   };
 
+  // Success/Cancel pages after Stripe/PayPal redirect
+  if (pageView === 'success') {
+    return (
+      <div className={`min-h-screen bg-gradient-to-br from-slate-50 via-white to-green-50/30 flex items-center justify-center p-6 ${isRTL ? 'rtl' : 'ltr'}`}>
+        <div className="max-w-lg w-full text-center">
+          <div className="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <Check className="w-12 h-12 text-green-600" />
+          </div>
+          <h1 className="text-3xl font-bold text-slate-900 mb-4">{t.payment.successReturn}</h1>
+          <p className="text-lg text-slate-600 mb-8">{t.payment.successMsg}</p>
+          <div className="bg-white rounded-2xl border border-slate-200 p-6 mb-8">
+            <p className="text-sm text-slate-500 mb-2">{t.contact.email}</p>
+            <span className="text-amber-600 font-bold text-lg">{COMPANY.email}</span>
+            <div className="mt-4">
+              <p className="text-sm text-slate-500 mb-2">{t.contact.whatsapp}</p>
+              <a href={`https://wa.me/${COMPANY.whatsapp.replace(/\+/g, '')}`} className="text-green-600 font-bold">{COMPANY.whatsapp}</a>
+            </div>
+          </div>
+          <button onClick={() => { setPageView('home'); window.history.pushState({}, '', '/'); }} className="px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold rounded-xl hover:from-amber-600 hover:to-amber-700 transition-all">
+            {t.payment.backHome}
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  if (pageView === 'cancel') {
+    return (
+      <div className={`min-h-screen bg-gradient-to-br from-slate-50 via-white to-amber-50/30 flex items-center justify-center p-6 ${isRTL ? 'rtl' : 'ltr'}`}>
+        <div className="max-w-lg w-full text-center">
+          <div className="w-24 h-24 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <RotateCcw className="w-12 h-12 text-amber-600" />
+          </div>
+          <h1 className="text-3xl font-bold text-slate-900 mb-4">{t.payment.cancelReturn}</h1>
+          <p className="text-lg text-slate-600 mb-8">{t.payment.cancelMsg}</p>
+          <div className="flex gap-4 justify-center">
+            <button onClick={() => { setPageView('home'); window.history.pushState({}, '', '/'); }} className="px-8 py-4 bg-slate-200 text-slate-700 font-bold rounded-xl hover:bg-slate-300 transition-all">
+              {t.payment.backHome}
+            </button>
+            <button onClick={() => { setPageView('home'); window.history.pushState({}, '', '/'); setShowPayment(true); }} className="px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold rounded-xl hover:from-amber-600 hover:to-amber-700 transition-all">
+              {t.payment.retryPayment}
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className={`min-h-screen bg-gradient-to-br from-slate-50 via-white to-amber-50/30 ${isRTL ? 'rtl' : 'ltr'}`} style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
 
-      {showPayment && <PaymentModal />}
+      {paymentModalJSX}
 
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -2124,6 +2280,29 @@ Ich spezialisiere mich auf das Design **autonomer Multi-Agenten-Architekturen**,
                   <div className="text-sm text-slate-400 uppercase tracking-wider">{s.label}</div>
                 </div>
               ))}
+            </div>
+          </section>
+
+          <section id="projects" className="py-24 px-6 bg-white">
+            <div className="max-w-7xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl font-bold text-slate-900 mb-4">{t.projects.title}</h2>
+                <p className="text-xl text-slate-500">{t.projects.subtitle}</p>
+              </div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {t.projects.items.map((project, i) => (
+                  <div key={i} className="group p-6 bg-gradient-to-br from-slate-50 to-white rounded-2xl border border-slate-200 hover:border-amber-300 hover:shadow-xl transition-all duration-300">
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-xs font-bold">{project.tag}</span>
+                      <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                        <Check className="w-4 h-4 text-green-600" />
+                      </div>
+                    </div>
+                    <h3 className="text-lg font-bold text-slate-900 mb-2">{project.name}</h3>
+                    <p className="text-sm text-slate-600 leading-relaxed">{project.desc}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </section>
 
@@ -2246,21 +2425,55 @@ Ich spezialisiere mich auf das Design **autonomer Multi-Agenten-Architekturen**,
           </section>
 
           <section className="py-24 px-6 bg-white">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-4xl font-bold text-slate-900 mb-12">{t.contact.title}</h2>
-              <div className="grid md:grid-cols-2 gap-6 mb-8">
-                <div className="p-6 bg-slate-50 rounded-xl border border-slate-200">
-                  <div className="text-sm text-slate-500 mb-2">{t.contact.address}</div>
-                  <div className="font-semibold text-slate-800">{COMPANY.address}</div>
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-4xl font-bold text-slate-900 mb-12 text-center">{t.contact.title}</h2>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <div className="p-6 bg-slate-50 rounded-xl border border-slate-200 mb-4">
+                    <div className="text-sm text-slate-500 mb-2">{t.contact.address}</div>
+                    <div className="font-semibold text-slate-800">{COMPANY.address}</div>
+                  </div>
+                  <div className="p-6 bg-slate-50 rounded-xl border border-slate-200 mb-4">
+                    <div className="text-sm text-slate-500 mb-2">{t.contact.email}</div>
+                    <div className="font-semibold text-amber-600">{COMPANY.email}</div>
+                  </div>
+                  <div className="p-6 bg-slate-50 rounded-xl border border-slate-200 mb-4">
+                    <div className="text-sm text-slate-500 mb-2">Website</div>
+                    <a href="https://elgasmi-eu.com" className="font-semibold text-amber-600 hover:underline">elgasmi-eu.com</a>
+                  </div>
+                  <a href={`https://wa.me/${COMPANY.whatsapp.replace(/\+/g, '')}`} className="inline-flex items-center gap-3 px-8 py-4 bg-green-500 text-white font-bold rounded-xl hover:bg-green-600 transition-all w-full justify-center">
+                    <MessageSquare className="w-6 h-6"/>{t.contact.whatsapp}
+                  </a>
                 </div>
-                <a href={`mailto:${COMPANY.email}`} className="p-6 bg-slate-50 rounded-xl border border-slate-200 hover:border-amber-300 transition-all">
-                  <div className="text-sm text-slate-500 mb-2">{t.contact.email}</div>
-                  <div className="font-semibold text-amber-600">{COMPANY.email}</div>
-                </a>
+                <div className="bg-slate-50 rounded-2xl border border-slate-200 p-6">
+                  {contactSent ? (
+                    <div className="text-center py-8">
+                      <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <Check className="w-8 h-8 text-green-600" />
+                      </div>
+                      <p className="text-green-700 font-semibold">{t.contact.formSuccess}</p>
+                    </div>
+                  ) : (
+                    <form onSubmit={async (e) => { e.preventDefault(); try { const API_BASE = import.meta.env.VITE_API_URL || import.meta.env.VITE_API_BASE_URL || ''; const ep = API_BASE ? `${API_BASE}/api/contact` : '/api/contact'; await fetch(ep, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(contactForm) }); } catch {} setContactSent(true); }} className="space-y-4">
+                      <div>
+                        <label className="block text-sm font-medium text-slate-700 mb-1">{t.contact.formName}</label>
+                        <input type="text" required value={contactForm.name} onChange={(e) => setContactForm(prev => ({ ...prev, name: e.target.value }))} placeholder={t.contact.formNamePh} className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:border-amber-500 focus:outline-none text-slate-900 bg-white" />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-slate-700 mb-1">{t.contact.formEmail}</label>
+                        <input type="email" required value={contactForm.email} onChange={(e) => setContactForm(prev => ({ ...prev, email: e.target.value }))} placeholder={t.contact.formEmailPh} className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:border-amber-500 focus:outline-none text-slate-900 bg-white" />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-slate-700 mb-1">{t.contact.formMessage}</label>
+                        <textarea required rows={4} value={contactForm.message} onChange={(e) => setContactForm(prev => ({ ...prev, message: e.target.value }))} placeholder={t.contact.formMsgPh} className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:border-amber-500 focus:outline-none text-slate-900 bg-white resize-none" />
+                      </div>
+                      <button type="submit" className="w-full py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold rounded-xl hover:from-amber-600 hover:to-amber-700 transition-all flex items-center justify-center gap-2">
+                        <Mail className="w-5 h-5" />{t.contact.formSend}
+                      </button>
+                    </form>
+                  )}
+                </div>
               </div>
-              <a href={`https://wa.me/${COMPANY.whatsapp.replace(/\+/g, '')}`} className="inline-flex items-center gap-3 px-8 py-4 bg-green-500 text-white font-bold rounded-xl hover:bg-green-600 transition-all">
-                <MessageSquare className="w-6 h-6"/>{t.contact.whatsapp}
-              </a>
             </div>
           </section>
 
@@ -2274,11 +2487,8 @@ Ich spezialisiere mich auf das Design **autonomer Multi-Agenten-Architekturen**,
                 <span className="text-slate-400">© 2025 {t.footer.rights}</span>
               </div>
               <div className="flex flex-col md:flex-row items-center gap-4">
-                <a href="https://elgasmiweb.vercel.app" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-amber-600 transition-colors">
-                  elgasmiweb.vercel.app
-                </a>
-                <a href="https://www.linkedin.com/in/asmae-warter-08208b3a1" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-blue-600 transition-colors">
-                  LinkedIn
+                <a href="https://elgasmi-eu.com" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-amber-600 transition-colors">
+                  elgasmi-eu.com
                 </a>
                 <p className="text-amber-600 font-semibold">{t.footer.tagline}</p>
               </div>

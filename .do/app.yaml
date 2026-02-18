@@ -21,7 +21,7 @@ services:
       - key: OPENAI_API_KEY
         type: SECRET
       - key: ALLOWED_ORIGINS
-        value: https://elgasmiweb.vercel.app,https://asmae-projet.netlify.app
+        value: https://elgasmi-eu.com
     health_check:
       http_path: /health
       initial_delay_seconds: 10

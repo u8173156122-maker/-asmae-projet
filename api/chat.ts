@@ -71,7 +71,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 EXPERTISE: Multi-agent architectures, RAG systems, workflow automation, AI integration, process optimization.
 
 COMPANY: ASMAE EL GASMI.e.U | Vienna, Austria
-Contact: asmaewarter5@gmail.com | WhatsApp: +4368120460618
+Contact: contact@elgasmi-eu.com | WhatsApp: +4368120460618
 
 SOLUTIONS PORTFOLIO:
 1. MULTI-AGENT INTELLIGENCE - €10,000 (lifetime license)
