@@ -37,6 +37,6 @@ services:
         value: contact@elgasmi-eu.com
       - key: JWT_SECRET
         sync: false
-    healthCheckPath: /health
+    healthCheckPath: /api/health
     customDomains:
       - domain: app.elgasmi-eu.com
