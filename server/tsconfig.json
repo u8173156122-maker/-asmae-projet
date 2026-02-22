@@ -13,8 +13,7 @@
     "resolveJsonModule": true,
     "declaration": true,
     "declarationMap": true,
-    "sourceMap": true,
-    "typeRoots": ["../node_modules/@types"]
+    "sourceMap": true
   },
   "include": ["./**/*.ts"],
   "exclude": ["node_modules", "dist", "deno-server.ts"]
