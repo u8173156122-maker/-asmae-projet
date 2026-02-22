@@ -253,9 +253,11 @@ app.post('/api/chat', aiLimiter, async (req: Request, res: Response) => {
   try {
     const { messages, language } = req.body;
 
+    const groqKey = process.env.GROQ_API_KEY;
     const openaiKey = process.env.OPENAI_API_KEY || process.env.BUILT_IN_FORGE_API_KEY;
-    if (!openaiKey) {
-      console.error('OPENAI_API_KEY not configured');
+    const aiKey = groqKey || openaiKey;
+    if (!aiKey) {
+      console.error('No AI API key configured');
       return res.status(503).json({ error: 'AI service not configured' });
     }
 
@@ -320,14 +322,19 @@ RULES:
 
 LANGUAGE: ${validatedLanguage === 'fr' ? 'French' : validatedLanguage === 'ar' ? 'Arabic' : validatedLanguage === 'de' ? 'German' : 'English'}`;
 
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    const apiUrl = groqKey
+      ? 'https://api.groq.com/openai/v1/chat/completions'
+      : 'https://api.openai.com/v1/chat/completions';
+    const model = groqKey ? 'llama-3.3-70b-versatile' : 'gpt-4o-mini';
+
+    const response = await fetch(apiUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${openaiKey}`
+        'Authorization': `Bearer ${aiKey}`
       },
       body: JSON.stringify({
-        model: 'gpt-4o-mini',
+        model,
         messages: [
           { role: 'system', content: systemPrompt },
           ...sanitizedMessages
@@ -339,7 +346,7 @@ LANGUAGE: ${validatedLanguage === 'fr' ? 'French' : validatedLanguage === 'ar' ?
 
     if (!response.ok) {
       const errorData = await response.json();
-      console.error('OpenAI API error:', errorData);
+      console.error('AI API error:', errorData);
       return res.status(500).json({ error: 'AI service unavailable' });
     }
 
@@ -423,6 +430,7 @@ app.get('/api/health', (_req: Request, res: Response) => {
     services: {
       stripe: !!process.env.STRIPE_SECRET_KEY,
       paypal: !!(process.env.PAYPAL_CLIENT_ID && (process.env.PAYPAL_CLIENT_SECRET || process.env.PAYPAL_SECRET)),
+      groq: !!process.env.GROQ_API_KEY,
       openai: !!(process.env.OPENAI_API_KEY || process.env.BUILT_IN_FORGE_API_KEY),
       brevo: !!process.env.BREVO_API_KEY
     }
@@ -437,6 +445,7 @@ const HOST = '0.0.0.0';
 
 app.listen(PORT, HOST, () => {
   console.log(`Server running on port ${PORT}`);
+  console.log(`Groq configured: ${!!process.env.GROQ_API_KEY}`);
   console.log(`OpenAI configured: ${!!(process.env.OPENAI_API_KEY || process.env.BUILT_IN_FORGE_API_KEY)}`);
   console.log(`Stripe configured: ${!!process.env.STRIPE_SECRET_KEY}`);
   console.log(`PayPal configured: ${!!(process.env.PAYPAL_CLIENT_ID && (process.env.PAYPAL_CLIENT_SECRET || process.env.PAYPAL_SECRET))}`);
