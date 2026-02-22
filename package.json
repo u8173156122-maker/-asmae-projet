@@ -8,7 +8,7 @@
     "dev": "vite",
     "dev:server": "tsx watch server/index.ts",
     "build": "tsc -b tsconfig.app.json && vite build",
-    "build:server": "esbuild server/index.ts --bundle --platform=node --outfile=server/dist/index.js --format=esm --packages=external --target=node20",
+    "build:server": "npx esbuild server/index.ts --bundle --platform=node --outfile=server/dist/index.js --format=esm --packages=external --target=node20",
     "lint": "eslint .",
     "preview": "vite preview",
     "start:server": "node server/dist/index.js",
