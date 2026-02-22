@@ -12,7 +12,7 @@ services:
       - key: APP_URL
         value: https://elgasmi-eu.com
       - key: ALLOWED_ORIGINS
-        value: https://elgasmi-eu.com,https://www.elgasmi-eu.com,https://elgasmi-eu-agent2.onrender.com
+        value: https://elgasmi-eu.com,https://www.elgasmi-eu.com,https://asmae-projet.onrender.com
       - key: OPENAI_API_KEY
         sync: false
       - key: BUILT_IN_FORGE_API_KEY

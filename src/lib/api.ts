@@ -205,7 +205,7 @@ export async function checkApiHealth(): Promise<boolean> {
 
   try {
     const baseUrl = API_URL || '';
-    const endpoint = baseUrl ? `${baseUrl}/health` : '/api/health';
+    const endpoint = baseUrl ? `${baseUrl}/api/health` : '/api/health';
     const response = await fetch(endpoint, {
       method: 'GET',
       headers: { 'Accept': 'application/json' }
